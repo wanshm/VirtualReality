@@ -1,9 +1,10 @@
 <html>
   <head>
     <script src="https://aframe.io/releases/1.7.0/aframe.min.js"></script>
+    <script src="script.js"></script>
   </head>
-  <body>
-    <a-scene>
+  <body onkeydown="moveCamera(event)">
+    <a-scene >
       
       <a-assets>
         <img src="log.png" id="log">
@@ -146,11 +147,11 @@
         <a-entity>
           door
           <a-box color="#664229" src="#door" scale="4 5 .4" position="5 2.5 9"></a-box>
-          <a-box color="#705b46" src="#door" repeat="0.2 1" scale=".4 5.5 .5" position="5 2.5 9" rotation="0 0 35"></a-box>
-          <a-box color="#705b46" src="#door" repeat="0.2 1" scale=".4 5.5 .5" position="5 2.5 9" rotation="0 0 -35"></a-box>
-          <a-box color="#705b46" src="#door" repeat="0.2 1" scale=".4 4.5 .5" position="3.5 2.5 9"></a-box>
-          <a-box color="#705b46" src="#door" repeat="0.2 1" scale="3.5 .4 .5" position="5 4.5 9"></a-box>
-          <a-box color="#705b46" src="#door" repeat="0.2 1" scale="3.5 .4 .5" position="5 0.5 9"></a-box>
+          <a-box color="#705b46" src="#door" repeat="0.2 1" scale=".4 5.5 .51" position="5 2.5 9" rotation="0 0 35"></a-box>
+          <a-box color="#705b46" src="#door" repeat="0.2 1" scale=".4 5.5 .53" position="5 2.5 9" rotation="0 0 -35"></a-box>
+          <a-box color="#705b46" src="#door" repeat="0.2 1" scale=".4 4.5 .52" position="3.5 2.5 9"></a-box>
+          <a-box color="#705b46" src="#door" repeat="0.2 1" scale="3.5 .4 .54" position="5 4.5 9"></a-box>
+          <a-box color="#705b46" src="#door" repeat="0.2 1" scale="3.5 .4 .55" position="5 0.5 9"></a-box>
           <a-cylinder color="yellow" position="6.5 2.5 9" scale=".2 .6 .2" rotation="90 0 0">doorknob</a-cylinder>
         </a-entity>
       </a-entity>
@@ -233,11 +234,11 @@
         <a-entity>
           door
           <a-box color="#664229" src="#door" scale="4 5 .4" position="5 2.5 9"></a-box>
-          <a-box color="#705b46" src="#door" repeat="0.2 1" scale=".4 5.5 .5" position="5 2.5 9" rotation="0 0 35"></a-box>
-          <a-box color="#705b46" src="#door" repeat="0.2 1" scale=".4 5.5 .5" position="5 2.5 9" rotation="0 0 -35"></a-box>
-          <a-box color="#705b46" src="#door" repeat="0.2 1" scale=".4 4.5 .5" position="3.5 2.5 9"></a-box>
-          <a-box color="#705b46" src="#door" repeat="0.2 1" scale="3.5 .4 .5" position="5 4.5 9"></a-box>
-          <a-box color="#705b46" src="#door" repeat="0.2 1" scale="3.5 .4 .5" position="5 0.5 9"></a-box>
+          <a-box color="#705b46" src="#door" repeat="0.2 1" scale=".4 5.5 .51" position="5 2.5 9" rotation="0 0 35"></a-box>
+          <a-box color="#705b46" src="#door" repeat="0.2 1" scale=".4 5.5 .52" position="5 2.5 9" rotation="0 0 -35"></a-box>
+          <a-box color="#705b46" src="#door" repeat="0.2 1" scale=".4 4.5 .51" position="3.5 2.5 9"></a-box>
+          <a-box color="#705b46" src="#door" repeat="0.2 1" scale="3.5 .4 .52" position="5 4.5 9"></a-box>
+          <a-box color="#705b46" src="#door" repeat="0.2 1" scale="3.5 .4 .51" position="5 0.5 9"></a-box>
           <a-cylinder color="yellow" position="6.5 2.5 9" scale=".2 .6 .2" rotation="90 0 0">doorknob</a-cylinder>
         </a-entity>
       </a-entity>
