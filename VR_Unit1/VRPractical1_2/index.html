@@ -5,11 +5,18 @@
   <body>
     <a-scene>
       
-      <a-plane position="0 0 0" rotation="-90 0 0" width="100" height="100" color="#7BC8A4"></a-plane>
+      <a-assets>
+        <img src="log.png" id="log">
+        <img src="log2.png" id="log2">
+        <img src="log3.png" id="log3">
+        <img src="door.png" id="door">
+      </a-assets>
+
+      <a-plane position="0 0 0" rotation="-90 0 0" width="1000" height="1000" color="#7BC8A4"></a-plane>
       <a-sky color="#ECECEC"></a-sky>
 
 
-      <a-entity id="mycar" position="-4 1.5 -7">
+      <a-entity id="mycar" position="-14 -3 7" scale="2 2 2" >
         car
         <a-box position="1.5 2.5 -1.5" scale="3 1 5" color="tomato">
           Body
@@ -60,58 +67,475 @@
         <a-cylinder rotation="0 0 90" scale=".5 .5 .5" position="0 2 -3 " color="#000000">Back Right Wheel</a-cylinder>
         <a-cylinder rotation="0 0 90" scale=".5 .5 .5" position="3 2 -3 " color="#000000">Back Front Wheel</a-cylinder>
       </a-entity>
-
-      <a-entity class="wall">
-        <a-cylinder color="brown" rotation="90 0 0" scale=".5 20 .5"></a-cylinder>
-        <a-cylinder color="brown" rotation="90 0 0" scale=".5 20 .5" position="0 1 0"></a-cylinder>
-        <a-cylinder color="brown" rotation="90 0 0" scale=".5 20 .5" position="0 2 0"></a-cylinder>
-        <a-cylinder color="brown" rotation="90 0 0" scale=".5 20 .5" position="0 3 0"></a-cylinder>
-        <a-cylinder color="brown" rotation="90 0 0" scale=".5 20 .5" position="0 4 0"></a-cylinder>
-        <a-cylinder color="brown" rotation="90 0 0" scale=".5 20 .5" position="0 5 0"></a-cylinder>
-        <a-cylinder color="brown" rotation="90 0 0" scale=".5 20 .5" position="0 6 0"></a-cylinder>
-        <a-cylinder color="brown" rotation="90 0 0" scale=".5 20 .5" position="0 7 0"></a-cylinder>
-        <a-cylinder color="brown" rotation="90 0 0" scale=".5 20 .5" position="0 8 0"></a-cylinder>
+      <a-entity class="house">
+        house
+        <a-entity class="wall">
+          left wall
+          <a-cylinder color="#987554" src="#log2" repeat="2 1" rotation="90 0 0" scale=".5 20 .5"></a-cylinder>
+          <a-cylinder color="#987554" src="#log3" repeat="2 2" rotation="90 0 0" scale=".5 20 .5" position="0 1 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log" repeat="2 3" rotation="90 0 0" scale=".5 20 .5" position="0 2 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log" repeat="2 2" rotation="90 0 0" scale=".5 20 .5" position="0 3 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log2" repeat="2 2" rotation="90 0 0" scale=".5 20 .5" position="0 4 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log3" repeat="2 5" rotation="90 0 0" scale=".5 20 .5" position="0 5 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log" repeat="2 2" rotation="90 0 0" scale=".5 20 .5" position="0 6 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log2" repeat="2 3" rotation="90 0 0" scale=".5 20 .5" position="0 7 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log" repeat="2 2" rotation="90 0 0" scale=".5 20 .5" position="0 8 0"></a-cylinder>
+        </a-entity>
+        <a-entity class="wall" rotation="0 90 0" position="9 .5 -9">
+          back wall
+          <a-cylinder color="#987554" src="#log3" repeat="2 3" rotation="90 0 0" scale=".5 20 .5"></a-cylinder>
+          <a-cylinder color="#987554" src="#log" repeat="2 2" rotation="90 0 0" scale=".5 20 .5" position="0 1 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log3" repeat="2 5" rotation="90 0 0" scale=".5 20 .5" position="0 2 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log2" repeat="2 2" rotation="90 0 0" scale=".5 20 .5" position="0 3 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log" repeat="2 7" rotation="90 0 0" scale=".5 20 .5" position="0 4 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log3" repeat="2 2" rotation="90 0 0" scale=".5 20 .5" position="0 5 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log" repeat="2 2" rotation="90 0 0" scale=".5 20 .5" position="0 6 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log2" repeat="2 1" rotation="90 0 0" scale=".5 20 .5" position="0 7 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log3" repeat="2 2" rotation="90 0 0" scale=".5 17.9 .5" position="0 8 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log2" repeat="2 2" rotation="90 0 0" scale=".5 15.4 .5" position="0 9 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log2" repeat="2 3" rotation="90 0 0" scale=".5 12 .5" position="0 10 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log" repeat="2 2" rotation="90 0 0" scale=".5 8.5 .5" position="0 11 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log3" repeat="2 2" rotation="90 0 0" scale=".5 5 .5" position="0 12 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log" repeat="2 2" rotation="90 0 0" scale=".5 1 .5" position="0 13 0"></a-cylinder>
+        </a-entity>
+        <a-entity class="wall" rotation="0 0 0" position="18 0 0">
+          right wall
+          <a-cylinder color="#987554" src="#log" repeat="2 2" rotation="90 0 0" scale=".5 20 .5"></a-cylinder>
+          <a-cylinder color="#987554" src="#log3" repeat="2 1" rotation="90 0 0" scale=".5 20 .5" position="0 1 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log3" repeat="2 3" rotation="90 0 0" scale=".5 20 .5" position="0 2 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log2" repeat="2 1" rotation="90 0 0" scale=".5 20 .5" position="0 3 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log" repeat="2 2" rotation="90 0 0" scale=".5 20 .5" position="0 4 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log3" repeat="2 2" rotation="90 0 0" scale=".5 20 .5" position="0 5 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log2" repeat="2 5" rotation="90 0 0" scale=".5 20 .5" position="0 6 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log" repeat="2 2" rotation="90 0 0" scale=".5 20 .5" position="0 7 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log2" repeat="2 3" rotation="90 0 0" scale=".5 20 .5" position="0 8 0"></a-cylinder>
+        </a-entity>
+        <a-entity class="wall" rotation="0 90 0" position="1 .5 9">
+          front lower left
+          <a-cylinder color="#987554" src="#log3" repeat="2 5" rotation="90 0 0" scale=".5 4 .5"></a-cylinder>
+          <a-cylinder color="#987554" src="#log3" repeat="2 2" rotation="90 0 0" scale=".5 4 .5" position="0 1 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log2" repeat="2 1" rotation="90 0 0" scale=".5 4 .5" position="0 2 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log" repeat="2 2" rotation="90 0 0" scale=".5 4 .5" position="0 3 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log" repeat="2 3" rotation="90 0 0" scale=".5 4 .5" position="0 4 0"></a-cylinder>
+        </a-entity>
+        <a-entity class="wall" rotation="0 90 0" position="13 .5 9">
+          front lower right
+          <a-cylinder color="#987554" src="#log" repeat="2 3" rotation="90 0 0" scale=".5 12 .5"></a-cylinder>
+          <a-cylinder color="#987554" src="#log2" repeat="2 2" rotation="90 0 0" scale=".5 12 .5" position="0 1 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log3" repeat="2 5" rotation="90 0 0" scale=".5 12 .5" position="0 2 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log" repeat="2 2" rotation="90 0 0" scale=".5 12 .5" position="0 3 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log2" repeat="2 1" rotation="90 0 0" scale=".5 12 .5" position="0 4 0"></a-cylinder>
+        </a-entity>
+        <a-entity class="wall" rotation="0 90 0" position="9 .5 9">
+          front upper
+          <a-cylinder color="#987554" src="#log" repeat="2 2" rotation="90 0 0" scale=".5 20 .5" position="0 5 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log" repeat="2 2" rotation="90 0 0" scale=".5 20 .5" position="0 6 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log2" repeat="2 2" rotation="90 0 0" scale=".5 20 .5" position="0 7 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log2" repeat="2 3" rotation="90 0 0" scale=".5 17.9 .5" position="0 8 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log" repeat="2 2" rotation="90 0 0" scale=".5 15.4 .5" position="0 9 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log" repeat="2 2" rotation="90 0 0" scale=".5 12 .5" position="0 10 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log" repeat="2 2" rotation="90 0 0" scale=".5 8.5 .5" position="0 11 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log2" repeat="2 1" rotation="90 0 0" scale=".5 5 .5" position="0 12 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log" repeat="2 2" rotation="90 0 0" scale=".5 1 .5" position="0 13 0"></a-cylinder>
+        </a-entity>
+        <a-entity>
+          roof
+          <a-box color="#0e5e2a" scale="13 1 20.05" position="4 11 0" rotation="0 0 30"></a-box>
+          <a-box color="#0e5e2a" scale="13 1 20.05" position="14 11 0" rotation="0 0 -30"></a-box>
+        </a-entity>
+        <a-entity>
+          door
+          <a-box color="#664229" src="#door" scale="4 5 .4" position="5 2.5 9"></a-box>
+          <a-box color="#705b46" src="#door" repeat="0.2 1" scale=".4 5.5 .5" position="5 2.5 9" rotation="0 0 35"></a-box>
+          <a-box color="#705b46" src="#door" repeat="0.2 1" scale=".4 5.5 .5" position="5 2.5 9" rotation="0 0 -35"></a-box>
+          <a-box color="#705b46" src="#door" repeat="0.2 1" scale=".4 4.5 .5" position="3.5 2.5 9"></a-box>
+          <a-box color="#705b46" src="#door" repeat="0.2 1" scale="3.5 .4 .5" position="5 4.5 9"></a-box>
+          <a-box color="#705b46" src="#door" repeat="0.2 1" scale="3.5 .4 .5" position="5 0.5 9"></a-box>
+          <a-cylinder color="yellow" position="6.5 2.5 9" scale=".2 .6 .2" rotation="90 0 0">doorknob</a-cylinder>
+        </a-entity>
       </a-entity>
-      <a-entity class="wall" rotation="0 90 0" position="9 .5 -9">
-        <a-cylinder color="brown" rotation="90 0 0" scale=".5 20 .5"></a-cylinder>
-        <a-cylinder color="brown" rotation="90 0 0" scale=".5 20 .5" position="0 1 0"></a-cylinder>
-        <a-cylinder color="brown" rotation="90 0 0" scale=".5 20 .5" position="0 2 0"></a-cylinder>
-        <a-cylinder color="brown" rotation="90 0 0" scale=".5 20 .5" position="0 3 0"></a-cylinder>
-        <a-cylinder color="brown" rotation="90 0 0" scale=".5 20 .5" position="0 4 0"></a-cylinder>
-        <a-cylinder color="brown" rotation="90 0 0" scale=".5 20 .5" position="0 5 0"></a-cylinder>
-        <a-cylinder color="brown" rotation="90 0 0" scale=".5 20 .5" position="0 6 0"></a-cylinder>
-        <a-cylinder color="brown" rotation="90 0 0" scale=".5 20 .5" position="0 7 0"></a-cylinder>
-        <a-cylinder color="brown" rotation="90 0 0" scale=".5 20 .5" position="0 8 0"></a-cylinder>
+      <a-entity class="house" position="90 0 -300">
+        house
+        <a-entity class="wall">
+          left wall
+          <a-cylinder color="#987554" src="#log2" repeat="2 1" rotation="90 0 0" scale=".5 20 .5"></a-cylinder>
+          <a-cylinder color="#987554" src="#log3" repeat="2 2" rotation="90 0 0" scale=".5 20 .5" position="0 1 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log" repeat="2 3" rotation="90 0 0" scale=".5 20 .5" position="0 2 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log" repeat="2 2" rotation="90 0 0" scale=".5 20 .5" position="0 3 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log2" repeat="2 2" rotation="90 0 0" scale=".5 20 .5" position="0 4 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log3" repeat="2 5" rotation="90 0 0" scale=".5 20 .5" position="0 5 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log" repeat="2 2" rotation="90 0 0" scale=".5 20 .5" position="0 6 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log2" repeat="2 3" rotation="90 0 0" scale=".5 20 .5" position="0 7 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log" repeat="2 2" rotation="90 0 0" scale=".5 20 .5" position="0 8 0"></a-cylinder>
+        </a-entity>
+        <a-entity class="wall" rotation="0 90 0" position="9 .5 -9">
+          back wall
+          <a-cylinder color="#987554" src="#log3" repeat="2 3" rotation="90 0 0" scale=".5 20 .5"></a-cylinder>
+          <a-cylinder color="#987554" src="#log" repeat="2 2" rotation="90 0 0" scale=".5 20 .5" position="0 1 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log3" repeat="2 5" rotation="90 0 0" scale=".5 20 .5" position="0 2 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log2" repeat="2 2" rotation="90 0 0" scale=".5 20 .5" position="0 3 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log" repeat="2 7" rotation="90 0 0" scale=".5 20 .5" position="0 4 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log3" repeat="2 2" rotation="90 0 0" scale=".5 20 .5" position="0 5 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log" repeat="2 2" rotation="90 0 0" scale=".5 20 .5" position="0 6 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log2" repeat="2 1" rotation="90 0 0" scale=".5 20 .5" position="0 7 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log3" repeat="2 2" rotation="90 0 0" scale=".5 17.9 .5" position="0 8 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log2" repeat="2 2" rotation="90 0 0" scale=".5 15.4 .5" position="0 9 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log2" repeat="2 3" rotation="90 0 0" scale=".5 12 .5" position="0 10 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log" repeat="2 2" rotation="90 0 0" scale=".5 8.5 .5" position="0 11 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log3" repeat="2 2" rotation="90 0 0" scale=".5 5 .5" position="0 12 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log" repeat="2 2" rotation="90 0 0" scale=".5 1 .5" position="0 13 0"></a-cylinder>
+        </a-entity>
+        <a-entity class="wall" rotation="0 0 0" position="18 0 0">
+          right wall
+          <a-cylinder color="#987554" src="#log" repeat="2 2" rotation="90 0 0" scale=".5 20 .5"></a-cylinder>
+          <a-cylinder color="#987554" src="#log3" repeat="2 1" rotation="90 0 0" scale=".5 20 .5" position="0 1 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log3" repeat="2 3" rotation="90 0 0" scale=".5 20 .5" position="0 2 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log2" repeat="2 1" rotation="90 0 0" scale=".5 20 .5" position="0 3 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log" repeat="2 2" rotation="90 0 0" scale=".5 20 .5" position="0 4 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log3" repeat="2 2" rotation="90 0 0" scale=".5 20 .5" position="0 5 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log2" repeat="2 5" rotation="90 0 0" scale=".5 20 .5" position="0 6 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log" repeat="2 2" rotation="90 0 0" scale=".5 20 .5" position="0 7 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log2" repeat="2 3" rotation="90 0 0" scale=".5 20 .5" position="0 8 0"></a-cylinder>
+        </a-entity>
+        <a-entity class="wall" rotation="0 90 0" position="1 .5 9">
+          front lower left
+          <a-cylinder color="#987554" src="#log3" repeat="2 5" rotation="90 0 0" scale=".5 4 .5"></a-cylinder>
+          <a-cylinder color="#987554" src="#log3" repeat="2 2" rotation="90 0 0" scale=".5 4 .5" position="0 1 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log2" repeat="2 1" rotation="90 0 0" scale=".5 4 .5" position="0 2 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log" repeat="2 2" rotation="90 0 0" scale=".5 4 .5" position="0 3 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log" repeat="2 3" rotation="90 0 0" scale=".5 4 .5" position="0 4 0"></a-cylinder>
+        </a-entity>
+        <a-entity class="wall" rotation="0 90 0" position="13 .5 9">
+          front lower right
+          <a-cylinder color="#987554" src="#log" repeat="2 3" rotation="90 0 0" scale=".5 12 .5"></a-cylinder>
+          <a-cylinder color="#987554" src="#log2" repeat="2 2" rotation="90 0 0" scale=".5 12 .5" position="0 1 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log3" repeat="2 5" rotation="90 0 0" scale=".5 12 .5" position="0 2 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log" repeat="2 2" rotation="90 0 0" scale=".5 12 .5" position="0 3 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log2" repeat="2 1" rotation="90 0 0" scale=".5 12 .5" position="0 4 0"></a-cylinder>
+        </a-entity>
+        <a-entity class="wall" rotation="0 90 0" position="9 .5 9">
+          front upper
+          <a-cylinder color="#987554" src="#log" repeat="2 2" rotation="90 0 0" scale=".5 20 .5" position="0 5 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log" repeat="2 2" rotation="90 0 0" scale=".5 20 .5" position="0 6 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log2" repeat="2 2" rotation="90 0 0" scale=".5 20 .5" position="0 7 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log2" repeat="2 3" rotation="90 0 0" scale=".5 17.9 .5" position="0 8 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log" repeat="2 2" rotation="90 0 0" scale=".5 15.4 .5" position="0 9 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log" repeat="2 2" rotation="90 0 0" scale=".5 12 .5" position="0 10 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log" repeat="2 2" rotation="90 0 0" scale=".5 8.5 .5" position="0 11 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log2" repeat="2 1" rotation="90 0 0" scale=".5 5 .5" position="0 12 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log" repeat="2 2" rotation="90 0 0" scale=".5 1 .5" position="0 13 0"></a-cylinder>
+        </a-entity>
+        <a-entity>
+          roof
+          <a-box color="#0e5e2a" scale="13 1 20.05" position="4 11 0" rotation="0 0 30"></a-box>
+          <a-box color="#0e5e2a" scale="13 1 20.05" position="14 11 0" rotation="0 0 -30"></a-box>
+        </a-entity>
+        <a-entity>
+          door
+          <a-box color="#664229" src="#door" scale="4 5 .4" position="5 2.5 9"></a-box>
+          <a-box color="#705b46" src="#door" repeat="0.2 1" scale=".4 5.5 .5" position="5 2.5 9" rotation="0 0 35"></a-box>
+          <a-box color="#705b46" src="#door" repeat="0.2 1" scale=".4 5.5 .5" position="5 2.5 9" rotation="0 0 -35"></a-box>
+          <a-box color="#705b46" src="#door" repeat="0.2 1" scale=".4 4.5 .5" position="3.5 2.5 9"></a-box>
+          <a-box color="#705b46" src="#door" repeat="0.2 1" scale="3.5 .4 .5" position="5 4.5 9"></a-box>
+          <a-box color="#705b46" src="#door" repeat="0.2 1" scale="3.5 .4 .5" position="5 0.5 9"></a-box>
+          <a-cylinder color="yellow" position="6.5 2.5 9" scale=".2 .6 .2" rotation="90 0 0">doorknob</a-cylinder>
+        </a-entity>
       </a-entity>
-      <a-entity class="wall" rotation="0 0 0" position="18 0 0">
-        <a-cylinder color="brown" rotation="90 0 0" scale=".5 20 .5"></a-cylinder>
-        <a-cylinder color="brown" rotation="90 0 0" scale=".5 20 .5" position="0 1 0"></a-cylinder>
-        <a-cylinder color="brown" rotation="90 0 0" scale=".5 20 .5" position="0 2 0"></a-cylinder>
-        <a-cylinder color="brown" rotation="90 0 0" scale=".5 20 .5" position="0 3 0"></a-cylinder>
-        <a-cylinder color="brown" rotation="90 0 0" scale=".5 20 .5" position="0 4 0"></a-cylinder>
-        <a-cylinder color="brown" rotation="90 0 0" scale=".5 20 .5" position="0 5 0"></a-cylinder>
-        <a-cylinder color="brown" rotation="90 0 0" scale=".5 20 .5" position="0 6 0"></a-cylinder>
-        <a-cylinder color="brown" rotation="90 0 0" scale=".5 20 .5" position="0 7 0"></a-cylinder>
-        <a-cylinder color="brown" rotation="90 0 0" scale=".5 20 .5" position="0 8 0"></a-cylinder>
+      <a-entity class="house" position="-100 0 2">
+        house
+        <a-entity class="wall">
+          left wall
+          <a-cylinder color="#987554" src="#log2" repeat="2 1" rotation="90 0 0" scale=".5 20 .5"></a-cylinder>
+          <a-cylinder color="#987554" src="#log3" repeat="2 2" rotation="90 0 0" scale=".5 20 .5" position="0 1 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log" repeat="2 3" rotation="90 0 0" scale=".5 20 .5" position="0 2 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log" repeat="2 2" rotation="90 0 0" scale=".5 20 .5" position="0 3 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log2" repeat="2 2" rotation="90 0 0" scale=".5 20 .5" position="0 4 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log3" repeat="2 5" rotation="90 0 0" scale=".5 20 .5" position="0 5 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log" repeat="2 2" rotation="90 0 0" scale=".5 20 .5" position="0 6 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log2" repeat="2 3" rotation="90 0 0" scale=".5 20 .5" position="0 7 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log" repeat="2 2" rotation="90 0 0" scale=".5 20 .5" position="0 8 0"></a-cylinder>
+        </a-entity>
+        <a-entity class="wall" rotation="0 90 0" position="9 .5 -9">
+          back wall
+          <a-cylinder color="#987554" src="#log3" repeat="2 3" rotation="90 0 0" scale=".5 20 .5"></a-cylinder>
+          <a-cylinder color="#987554" src="#log" repeat="2 2" rotation="90 0 0" scale=".5 20 .5" position="0 1 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log3" repeat="2 5" rotation="90 0 0" scale=".5 20 .5" position="0 2 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log2" repeat="2 2" rotation="90 0 0" scale=".5 20 .5" position="0 3 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log" repeat="2 7" rotation="90 0 0" scale=".5 20 .5" position="0 4 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log3" repeat="2 2" rotation="90 0 0" scale=".5 20 .5" position="0 5 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log" repeat="2 2" rotation="90 0 0" scale=".5 20 .5" position="0 6 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log2" repeat="2 1" rotation="90 0 0" scale=".5 20 .5" position="0 7 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log3" repeat="2 2" rotation="90 0 0" scale=".5 17.9 .5" position="0 8 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log2" repeat="2 2" rotation="90 0 0" scale=".5 15.4 .5" position="0 9 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log2" repeat="2 3" rotation="90 0 0" scale=".5 12 .5" position="0 10 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log" repeat="2 2" rotation="90 0 0" scale=".5 8.5 .5" position="0 11 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log3" repeat="2 2" rotation="90 0 0" scale=".5 5 .5" position="0 12 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log" repeat="2 2" rotation="90 0 0" scale=".5 1 .5" position="0 13 0"></a-cylinder>
+        </a-entity>
+        <a-entity class="wall" rotation="0 0 0" position="18 0 0">
+          right wall
+          <a-cylinder color="#987554" src="#log" repeat="2 2" rotation="90 0 0" scale=".5 20 .5"></a-cylinder>
+          <a-cylinder color="#987554" src="#log3" repeat="2 1" rotation="90 0 0" scale=".5 20 .5" position="0 1 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log3" repeat="2 3" rotation="90 0 0" scale=".5 20 .5" position="0 2 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log2" repeat="2 1" rotation="90 0 0" scale=".5 20 .5" position="0 3 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log" repeat="2 2" rotation="90 0 0" scale=".5 20 .5" position="0 4 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log3" repeat="2 2" rotation="90 0 0" scale=".5 20 .5" position="0 5 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log2" repeat="2 5" rotation="90 0 0" scale=".5 20 .5" position="0 6 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log" repeat="2 2" rotation="90 0 0" scale=".5 20 .5" position="0 7 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log2" repeat="2 3" rotation="90 0 0" scale=".5 20 .5" position="0 8 0"></a-cylinder>
+        </a-entity>
+        <a-entity class="wall" rotation="0 90 0" position="1 .5 9">
+          front lower left
+          <a-cylinder color="#987554" src="#log3" repeat="2 5" rotation="90 0 0" scale=".5 4 .5"></a-cylinder>
+          <a-cylinder color="#987554" src="#log3" repeat="2 2" rotation="90 0 0" scale=".5 4 .5" position="0 1 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log2" repeat="2 1" rotation="90 0 0" scale=".5 4 .5" position="0 2 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log" repeat="2 2" rotation="90 0 0" scale=".5 4 .5" position="0 3 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log" repeat="2 3" rotation="90 0 0" scale=".5 4 .5" position="0 4 0"></a-cylinder>
+        </a-entity>
+        <a-entity class="wall" rotation="0 90 0" position="13 .5 9">
+          front lower right
+          <a-cylinder color="#987554" src="#log" repeat="2 3" rotation="90 0 0" scale=".5 12 .5"></a-cylinder>
+          <a-cylinder color="#987554" src="#log2" repeat="2 2" rotation="90 0 0" scale=".5 12 .5" position="0 1 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log3" repeat="2 5" rotation="90 0 0" scale=".5 12 .5" position="0 2 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log" repeat="2 2" rotation="90 0 0" scale=".5 12 .5" position="0 3 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log2" repeat="2 1" rotation="90 0 0" scale=".5 12 .5" position="0 4 0"></a-cylinder>
+        </a-entity>
+        <a-entity class="wall" rotation="0 90 0" position="9 .5 9">
+          front upper
+          <a-cylinder color="#987554" src="#log" repeat="2 2" rotation="90 0 0" scale=".5 20 .5" position="0 5 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log" repeat="2 2" rotation="90 0 0" scale=".5 20 .5" position="0 6 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log2" repeat="2 2" rotation="90 0 0" scale=".5 20 .5" position="0 7 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log2" repeat="2 3" rotation="90 0 0" scale=".5 17.9 .5" position="0 8 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log" repeat="2 2" rotation="90 0 0" scale=".5 15.4 .5" position="0 9 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log" repeat="2 2" rotation="90 0 0" scale=".5 12 .5" position="0 10 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log" repeat="2 2" rotation="90 0 0" scale=".5 8.5 .5" position="0 11 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log2" repeat="2 1" rotation="90 0 0" scale=".5 5 .5" position="0 12 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log" repeat="2 2" rotation="90 0 0" scale=".5 1 .5" position="0 13 0"></a-cylinder>
+        </a-entity>
+        <a-entity>
+          roof
+          <a-box color="#0e5e2a" scale="13 1 20.05" position="4 11 0" rotation="0 0 30"></a-box>
+          <a-box color="#0e5e2a" scale="13 1 20.05" position="14 11 0" rotation="0 0 -30"></a-box>
+        </a-entity>
+        <a-entity>
+          door
+          <a-box color="#664229" src="#door" scale="4 5 .4" position="5 2.5 9"></a-box>
+          <a-box color="#705b46" src="#door" repeat="0.2 1" scale=".4 5.5 .5" position="5 2.5 9" rotation="0 0 35"></a-box>
+          <a-box color="#705b46" src="#door" repeat="0.2 1" scale=".4 5.5 .5" position="5 2.5 9" rotation="0 0 -35"></a-box>
+          <a-box color="#705b46" src="#door" repeat="0.2 1" scale=".4 4.5 .5" position="3.5 2.5 9"></a-box>
+          <a-box color="#705b46" src="#door" repeat="0.2 1" scale="3.5 .4 .5" position="5 4.5 9"></a-box>
+          <a-box color="#705b46" src="#door" repeat="0.2 1" scale="3.5 .4 .5" position="5 0.5 9"></a-box>
+          <a-cylinder color="yellow" position="6.5 2.5 9" scale=".2 .6 .2" rotation="90 0 0">doorknob</a-cylinder>
+        </a-entity>
       </a-entity>
-      <a-entity class="wall" rotation="0 90 0" position="1 .5 9">
-        <a-cylinder color="brown" rotation="90 0 0" scale=".5 4 .5"></a-cylinder>
-        <a-cylinder color="brown" rotation="90 0 0" scale=".5 4 .5" position="0 1 0"></a-cylinder>
-        <a-cylinder color="brown" rotation="90 0 0" scale=".5 4 .5" position="0 2 0"></a-cylinder>
-        <a-cylinder color="brown" rotation="90 0 0" scale=".5 4 .5" position="0 3 0"></a-cylinder>
-        <a-cylinder color="brown" rotation="90 0 0" scale=".5 4 .5" position="0 4 0"></a-cylinder>
-        <a-cylinder color="brown" rotation="90 0 0" scale=".5 4 .5" position="0 5 0"></a-cylinder>
-        <a-cylinder color="brown" rotation="90 0 0" scale=".5 4 .5" position="0 6 0"></a-cylinder>
-        <a-cylinder color="brown" rotation="90 0 0" scale=".5 4 .5" position="0 7 0"></a-cylinder>
-        <a-cylinder color="brown" rotation="90 0 0" scale=".5 4 .5" position="0 8 0"></a-cylinder>
+      <a-entity class="house" position=" 0 0 45" rotation="0 180 0">
+        house
+        <a-entity class="wall">
+          left wall
+          <a-cylinder color="#987554" src="#log2" repeat="2 1" rotation="90 0 0" scale=".5 20 .5"></a-cylinder>
+          <a-cylinder color="#987554" src="#log3" repeat="2 2" rotation="90 0 0" scale=".5 20 .5" position="0 1 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log" repeat="2 3" rotation="90 0 0" scale=".5 20 .5" position="0 2 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log" repeat="2 2" rotation="90 0 0" scale=".5 20 .5" position="0 3 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log2" repeat="2 2" rotation="90 0 0" scale=".5 20 .5" position="0 4 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log3" repeat="2 5" rotation="90 0 0" scale=".5 20 .5" position="0 5 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log" repeat="2 2" rotation="90 0 0" scale=".5 20 .5" position="0 6 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log2" repeat="2 3" rotation="90 0 0" scale=".5 20 .5" position="0 7 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log" repeat="2 2" rotation="90 0 0" scale=".5 20 .5" position="0 8 0"></a-cylinder>
+        </a-entity>
+        <a-entity class="wall" rotation="0 90 0" position="9 .5 -9">
+          back wall
+          <a-cylinder color="#987554" src="#log3" repeat="2 3" rotation="90 0 0" scale=".5 20 .5"></a-cylinder>
+          <a-cylinder color="#987554" src="#log" repeat="2 2" rotation="90 0 0" scale=".5 20 .5" position="0 1 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log3" repeat="2 5" rotation="90 0 0" scale=".5 20 .5" position="0 2 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log2" repeat="2 2" rotation="90 0 0" scale=".5 20 .5" position="0 3 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log" repeat="2 7" rotation="90 0 0" scale=".5 20 .5" position="0 4 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log3" repeat="2 2" rotation="90 0 0" scale=".5 20 .5" position="0 5 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log" repeat="2 2" rotation="90 0 0" scale=".5 20 .5" position="0 6 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log2" repeat="2 1" rotation="90 0 0" scale=".5 20 .5" position="0 7 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log3" repeat="2 2" rotation="90 0 0" scale=".5 17.9 .5" position="0 8 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log2" repeat="2 2" rotation="90 0 0" scale=".5 15.4 .5" position="0 9 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log2" repeat="2 3" rotation="90 0 0" scale=".5 12 .5" position="0 10 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log" repeat="2 2" rotation="90 0 0" scale=".5 8.5 .5" position="0 11 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log3" repeat="2 2" rotation="90 0 0" scale=".5 5 .5" position="0 12 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log" repeat="2 2" rotation="90 0 0" scale=".5 1 .5" position="0 13 0"></a-cylinder>
+        </a-entity>
+        <a-entity class="wall" rotation="0 0 0" position="18 0 0">
+          right wall
+          <a-cylinder color="#987554" src="#log" repeat="2 2" rotation="90 0 0" scale=".5 20 .5"></a-cylinder>
+          <a-cylinder color="#987554" src="#log3" repeat="2 1" rotation="90 0 0" scale=".5 20 .5" position="0 1 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log3" repeat="2 3" rotation="90 0 0" scale=".5 20 .5" position="0 2 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log2" repeat="2 1" rotation="90 0 0" scale=".5 20 .5" position="0 3 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log" repeat="2 2" rotation="90 0 0" scale=".5 20 .5" position="0 4 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log3" repeat="2 2" rotation="90 0 0" scale=".5 20 .5" position="0 5 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log2" repeat="2 5" rotation="90 0 0" scale=".5 20 .5" position="0 6 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log" repeat="2 2" rotation="90 0 0" scale=".5 20 .5" position="0 7 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log2" repeat="2 3" rotation="90 0 0" scale=".5 20 .5" position="0 8 0"></a-cylinder>
+        </a-entity>
+        <a-entity class="wall" rotation="0 90 0" position="1 .5 9">
+          front lower left
+          <a-cylinder color="#987554" src="#log3" repeat="2 5" rotation="90 0 0" scale=".5 4 .5"></a-cylinder>
+          <a-cylinder color="#987554" src="#log3" repeat="2 2" rotation="90 0 0" scale=".5 4 .5" position="0 1 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log2" repeat="2 1" rotation="90 0 0" scale=".5 4 .5" position="0 2 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log" repeat="2 2" rotation="90 0 0" scale=".5 4 .5" position="0 3 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log" repeat="2 3" rotation="90 0 0" scale=".5 4 .5" position="0 4 0"></a-cylinder>
+        </a-entity>
+        <a-entity class="wall" rotation="0 90 0" position="13 .5 9">
+          front lower right
+          <a-cylinder color="#987554" src="#log" repeat="2 3" rotation="90 0 0" scale=".5 12 .5"></a-cylinder>
+          <a-cylinder color="#987554" src="#log2" repeat="2 2" rotation="90 0 0" scale=".5 12 .5" position="0 1 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log3" repeat="2 5" rotation="90 0 0" scale=".5 12 .5" position="0 2 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log" repeat="2 2" rotation="90 0 0" scale=".5 12 .5" position="0 3 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log2" repeat="2 1" rotation="90 0 0" scale=".5 12 .5" position="0 4 0"></a-cylinder>
+        </a-entity>
+        <a-entity class="wall" rotation="0 90 0" position="9 .5 9">
+          front upper
+          <a-cylinder color="#987554" src="#log" repeat="2 2" rotation="90 0 0" scale=".5 20 .5" position="0 5 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log" repeat="2 2" rotation="90 0 0" scale=".5 20 .5" position="0 6 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log2" repeat="2 2" rotation="90 0 0" scale=".5 20 .5" position="0 7 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log2" repeat="2 3" rotation="90 0 0" scale=".5 17.9 .5" position="0 8 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log" repeat="2 2" rotation="90 0 0" scale=".5 15.4 .5" position="0 9 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log" repeat="2 2" rotation="90 0 0" scale=".5 12 .5" position="0 10 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log" repeat="2 2" rotation="90 0 0" scale=".5 8.5 .5" position="0 11 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log2" repeat="2 1" rotation="90 0 0" scale=".5 5 .5" position="0 12 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log" repeat="2 2" rotation="90 0 0" scale=".5 1 .5" position="0 13 0"></a-cylinder>
+        </a-entity>
+        <a-entity>
+          roof
+          <a-box color="#0e5e2a" scale="13 1 20.05" position="4 11 0" rotation="0 0 30"></a-box>
+          <a-box color="#0e5e2a" scale="13 1 20.05" position="14 11 0" rotation="0 0 -30"></a-box>
+        </a-entity>
+        <a-entity>
+          door
+          <a-box color="#664229" src="#door" scale="4 5 .4" position="5 2.5 9"></a-box>
+          <a-box color="#705b46" src="#door" repeat="0.2 1" scale=".4 5.5 .5" position="5 2.5 9" rotation="0 0 35"></a-box>
+          <a-box color="#705b46" src="#door" repeat="0.2 1" scale=".4 5.5 .5" position="5 2.5 9" rotation="0 0 -35"></a-box>
+          <a-box color="#705b46" src="#door" repeat="0.2 1" scale=".4 4.5 .5" position="3.5 2.5 9"></a-box>
+          <a-box color="#705b46" src="#door" repeat="0.2 1" scale="3.5 .4 .5" position="5 4.5 9"></a-box>
+          <a-box color="#705b46" src="#door" repeat="0.2 1" scale="3.5 .4 .5" position="5 0.5 9"></a-box>
+          <a-cylinder color="yellow" position="6.5 2.5 9" scale=".2 .6 .2" rotation="90 0 0">doorknob</a-cylinder>
+        </a-entity>
       </a-entity>
-      <a-entity class="wall" rotation="0 90 0" position="12 .5 9">
-        <a-cylinder color="brown" rotation="90 0 0" scale=".5 12 .5"></a-cylinder>
-        <a-cylinder color="brown" rotation="90 0 0" scale=".5 12 .5" position="0 1 0"></a-cylinder>
-        <a-cylinder color="brown" rotation="90 0 0" scale=".5 12 .5" position="0 2 0"></a-cylinder>
-        <a-cylinder color="brown" rotation="90 0 0" scale=".5 12 .5" position="0 3 0"></a-cylinder>
+      <a-entity class="house" position=" 30 0 100" rotation="0 270 0 ">
+        house
+        <a-entity class="wall">
+          left wall
+          <a-cylinder color="#987554" src="#log2" repeat="2 1" rotation="90 0 0" scale=".5 20 .5"></a-cylinder>
+          <a-cylinder color="#987554" src="#log3" repeat="2 2" rotation="90 0 0" scale=".5 20 .5" position="0 1 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log" repeat="2 3" rotation="90 0 0" scale=".5 20 .5" position="0 2 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log" repeat="2 2" rotation="90 0 0" scale=".5 20 .5" position="0 3 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log2" repeat="2 2" rotation="90 0 0" scale=".5 20 .5" position="0 4 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log3" repeat="2 5" rotation="90 0 0" scale=".5 20 .5" position="0 5 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log" repeat="2 2" rotation="90 0 0" scale=".5 20 .5" position="0 6 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log2" repeat="2 3" rotation="90 0 0" scale=".5 20 .5" position="0 7 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log" repeat="2 2" rotation="90 0 0" scale=".5 20 .5" position="0 8 0"></a-cylinder>
+        </a-entity>
+        <a-entity class="wall" rotation="0 90 0" position="9 .5 -9">
+          back wall
+          <a-cylinder color="#987554" src="#log3" repeat="2 3" rotation="90 0 0" scale=".5 20 .5"></a-cylinder>
+          <a-cylinder color="#987554" src="#log" repeat="2 2" rotation="90 0 0" scale=".5 20 .5" position="0 1 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log3" repeat="2 5" rotation="90 0 0" scale=".5 20 .5" position="0 2 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log2" repeat="2 2" rotation="90 0 0" scale=".5 20 .5" position="0 3 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log" repeat="2 7" rotation="90 0 0" scale=".5 20 .5" position="0 4 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log3" repeat="2 2" rotation="90 0 0" scale=".5 20 .5" position="0 5 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log" repeat="2 2" rotation="90 0 0" scale=".5 20 .5" position="0 6 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log2" repeat="2 1" rotation="90 0 0" scale=".5 20 .5" position="0 7 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log3" repeat="2 2" rotation="90 0 0" scale=".5 17.9 .5" position="0 8 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log2" repeat="2 2" rotation="90 0 0" scale=".5 15.4 .5" position="0 9 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log2" repeat="2 3" rotation="90 0 0" scale=".5 12 .5" position="0 10 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log" repeat="2 2" rotation="90 0 0" scale=".5 8.5 .5" position="0 11 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log3" repeat="2 2" rotation="90 0 0" scale=".5 5 .5" position="0 12 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log" repeat="2 2" rotation="90 0 0" scale=".5 1 .5" position="0 13 0"></a-cylinder>
+        </a-entity>
+        <a-entity class="wall" rotation="0 0 0" position="18 0 0">
+          right wall
+          <a-cylinder color="#987554" src="#log" repeat="2 2" rotation="90 0 0" scale=".5 20 .5"></a-cylinder>
+          <a-cylinder color="#987554" src="#log3" repeat="2 1" rotation="90 0 0" scale=".5 20 .5" position="0 1 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log3" repeat="2 3" rotation="90 0 0" scale=".5 20 .5" position="0 2 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log2" repeat="2 1" rotation="90 0 0" scale=".5 20 .5" position="0 3 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log" repeat="2 2" rotation="90 0 0" scale=".5 20 .5" position="0 4 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log3" repeat="2 2" rotation="90 0 0" scale=".5 20 .5" position="0 5 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log2" repeat="2 5" rotation="90 0 0" scale=".5 20 .5" position="0 6 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log" repeat="2 2" rotation="90 0 0" scale=".5 20 .5" position="0 7 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log2" repeat="2 3" rotation="90 0 0" scale=".5 20 .5" position="0 8 0"></a-cylinder>
+        </a-entity>
+        <a-entity class="wall" rotation="0 90 0" position="1 .5 9">
+          front lower left
+          <a-cylinder color="#987554" src="#log3" repeat="2 5" rotation="90 0 0" scale=".5 4 .5"></a-cylinder>
+          <a-cylinder color="#987554" src="#log3" repeat="2 2" rotation="90 0 0" scale=".5 4 .5" position="0 1 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log2" repeat="2 1" rotation="90 0 0" scale=".5 4 .5" position="0 2 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log" repeat="2 2" rotation="90 0 0" scale=".5 4 .5" position="0 3 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log" repeat="2 3" rotation="90 0 0" scale=".5 4 .5" position="0 4 0"></a-cylinder>
+        </a-entity>
+        <a-entity class="wall" rotation="0 90 0" position="13 .5 9">
+          front lower right
+          <a-cylinder color="#987554" src="#log" repeat="2 3" rotation="90 0 0" scale=".5 12 .5"></a-cylinder>
+          <a-cylinder color="#987554" src="#log2" repeat="2 2" rotation="90 0 0" scale=".5 12 .5" position="0 1 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log3" repeat="2 5" rotation="90 0 0" scale=".5 12 .5" position="0 2 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log" repeat="2 2" rotation="90 0 0" scale=".5 12 .5" position="0 3 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log2" repeat="2 1" rotation="90 0 0" scale=".5 12 .5" position="0 4 0"></a-cylinder>
+        </a-entity>
+        <a-entity class="wall" rotation="0 90 0" position="9 .5 9">
+          front upper
+          <a-cylinder color="#987554" src="#log" repeat="2 2" rotation="90 0 0" scale=".5 20 .5" position="0 5 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log" repeat="2 2" rotation="90 0 0" scale=".5 20 .5" position="0 6 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log2" repeat="2 2" rotation="90 0 0" scale=".5 20 .5" position="0 7 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log2" repeat="2 3" rotation="90 0 0" scale=".5 17.9 .5" position="0 8 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log" repeat="2 2" rotation="90 0 0" scale=".5 15.4 .5" position="0 9 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log" repeat="2 2" rotation="90 0 0" scale=".5 12 .5" position="0 10 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log" repeat="2 2" rotation="90 0 0" scale=".5 8.5 .5" position="0 11 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log2" repeat="2 1" rotation="90 0 0" scale=".5 5 .5" position="0 12 0"></a-cylinder>
+          <a-cylinder color="#987554" src="#log" repeat="2 2" rotation="90 0 0" scale=".5 1 .5" position="0 13 0"></a-cylinder>
+        </a-entity>
+        <a-entity>
+          roof
+          <a-box color="#0e5e2a" scale="13 1 20.05" position="4 11 0" rotation="0 0 30"></a-box>
+          <a-box color="#0e5e2a" scale="13 1 20.05" position="14 11 0" rotation="0 0 -30"></a-box>
+        </a-entity>
+        <a-entity>
+          door
+          <a-box color="#664229" src="#door" scale="4 5 .4" position="5 2.5 9"></a-box>
+          <a-box color="#705b46" src="#door" repeat="0.2 1" scale=".4 5.5 .5" position="5 2.5 9" rotation="0 0 35"></a-box>
+          <a-box color="#705b46" src="#door" repeat="0.2 1" scale=".4 5.5 .5" position="5 2.5 9" rotation="0 0 -35"></a-box>
+          <a-box color="#705b46" src="#door" repeat="0.2 1" scale=".4 4.5 .5" position="3.5 2.5 9"></a-box>
+          <a-box color="#705b46" src="#door" repeat="0.2 1" scale="3.5 .4 .5" position="5 4.5 9"></a-box>
+          <a-box color="#705b46" src="#door" repeat="0.2 1" scale="3.5 .4 .5" position="5 0.5 9"></a-box>
+          <a-cylinder color="yellow" position="6.5 2.5 9" scale=".2 .6 .2" rotation="90 0 0">doorknob</a-cylinder>
+        </a-entity>
       </a-entity>
-      <a-camera position="4 5 3" ></a-camera>
+      <a-entity id="tree" position="-20 1 -13" scale="3 3 3">
+        <!-- Trunk -->
+        <a-cylinder position="0 0 0" height="3" radius=".75" color="brown"></a-cylinder>
+        <!-- Pines -->
+        <a-cone position="0 1.5 0" height="1.5" radius-bottom="2" radius-top="0.1" color="green"></a-cone>
+        <a-cone position="0 2.5 0" height="1.5" radius-bottom="1.7" radius-top="0.1" color="green"></a-cone>
+        <a-cone position="0 3.5 0" height="1.5" radius-bottom="1.4" radius-top="0.1" color="green"></a-cone>
+        <a-cone position="0 4.5 0" height="1.5" radius-bottom="1.1" radius-top="0.1" color="green"></a-cone>
+        <a-cone position="0 5.5 0" height="1.5" radius-bottom="0.9" radius-top="0.1" color="green"></a-cone>
+        <a-cone position="0 6.5 0" height="1.5" radius-bottom="0.7" radius-top="0.1" color="green"></a-cone>
+      </a-entity>
+      <a-entity id="tree" position="24 1 13" scale="3 2 3">
+        <!-- Trunk -->
+        <a-cylinder position="0 0 0" height="3" radius=".75" color="brown"></a-cylinder>
+        <!-- Pines -->
+        <a-cone position="0 1.5 0" height="1.5" radius-bottom="2" radius-top="0.1" color="green"></a-cone>
+        <a-cone position="0 2.5 0" height="1.5" radius-bottom="1.7" radius-top="0.1" color="green"></a-cone>
+        <a-cone position="0 3.5 0" height="1.5" radius-bottom="1.4" radius-top="0.1" color="green"></a-cone>
+        <a-cone position="0 4.5 0" height="1.5" radius-bottom="1.1" radius-top="0.1" color="green"></a-cone>
+        <a-cone position="0 5.5 0" height="1.5" radius-bottom="0.9" radius-top="0.1" color="green"></a-cone>
+        <a-cone position="0 6.5 0" height="1.5" radius-bottom="0.7" radius-top="0.1" color="green"></a-cone>
+      </a-entity>
+      <a-entity id="tree" position="-30 1 -46" scale="3 4 3">
+        <!-- Trunk -->
+        <a-cylinder position="0 0 0" height="3" radius=".75" color="brown"></a-cylinder>
+        <!-- Pines -->
+        <a-cone position="0 1.5 0" height="1.5" radius-bottom="2" radius-top="0.1" color="green"></a-cone>
+        <a-cone position="0 2.5 0" height="1.5" radius-bottom="1.7" radius-top="0.1" color="green"></a-cone>
+        <a-cone position="0 3.5 0" height="1.5" radius-bottom="1.4" radius-top="0.1" color="green"></a-cone>
+        <a-cone position="0 4.5 0" height="1.5" radius-bottom="1.1" radius-top="0.1" color="green"></a-cone>
+        <a-cone position="0 5.5 0" height="1.5" radius-bottom="0.9" radius-top="0.1" color="green"></a-cone>
+        <a-cone position="0 6.5 0" height="1.5" radius-bottom="0.7" radius-top="0.1" color="green"></a-cone>
+      </a-entity>
+      <a-camera position="4 3 25" ></a-camera>
     </a-scene>
   </body>
 </html>
