@@ -24,6 +24,11 @@ window.addEventListener("DOMContentLoaded",function() {
    //Task 2: Use the createCloud(...)  to add several clouds to the scene at various positions.
 
    //Task 4: Use the createHouse(...)  to add several houses to the scene at various positions.
+    for(let i=0;i<100;i++){
+    let x = rndInt(-200,200);  
+    let z = rndInt(-200,200);  
+    createHouse(x,0,z);     
+  }
 })
 
 /* Task 1: Create a function createCloud that,
@@ -34,7 +39,34 @@ window.addEventListener("DOMContentLoaded",function() {
       5) Set cloud entities position to those passed in to the function.
       6) Add the cloud entity to the scene
 */
+function createHouse(x,y,z){
+  let house = document.createElement("a-entity");
 
+  let base = document.createElement("a-box");
+  let roof = document.createElement("a-cylinder");
+
+  roof.setAttribute("color","black");
+
+  base.setAttribute("color","blue");
+  base.setAttribute("position","0 2 0");
+  base.setAttribute("height","3");
+  base.setAttribute("width","3");
+  base.setAttribute("depth","2.5");
+
+  roof.setAttribute("segments-radial","3");
+  roof.setAttribute("position","0 4.5 0");
+  roof.setAttribute("rotation","-90 0 0");
+
+  roof.setAttribute("scale","2.5 2.5 2")
+
+
+  house.append(base);
+  house.append(roof);
+
+  house.setAttribute("position",{x:x, y:y, z:z});
+  scene.append(house);
+  
+}
 const rand3 = (l1,l2,l3) => {
   const a = rndInt(l1[0],l1[1]);
   const b = rndInt(l2[0],l2[1]);
