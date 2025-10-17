@@ -1,16 +1,25 @@
-let scene;
-
-function rnd(l, u){
-  return Math.floor(Math.random()*(u-l) + l);
+ let scene; 
+function rndInt(l, u){
+  return Math.round(Math.random()*(u-l) + l);
+}
+function rndFloat(l, u){
+  return (Math.random()*(u-l) + l);
 }
 
 window.addEventListener("DOMContentLoaded",function() {
-  scene = document.querySelector("a-scene"); //CSS Selector
+  scene = document.querySelector("a-scene");  //CSS Selector
 
   for(let i = 0; i < 100; i++){
-    let x = rnd(-20,20);
-    let z = rnd(-20,20);
+    let x = rndInt(-20,20);
+    let z = rndInt(-20,20);
     createTree(x,0,z);
+  }
+
+  for (let i = 0; i < 3000; i++){
+    const p = rand3([-500,500],[30,50],[-500,500])
+    const s = rand3float([2,4],[.5,1],[2,4]);
+    console.log(s);
+    createCloud(p,s);
   }
    //Task 2: Use the createCloud(...)  to add several clouds to the scene at various positions.
 
@@ -25,6 +34,37 @@ window.addEventListener("DOMContentLoaded",function() {
       5) Set cloud entities position to those passed in to the function.
       6) Add the cloud entity to the scene
 */
+
+const rand3 = (l1,l2,l3) => {
+  const a = rndInt(l1[0],l1[1]);
+  const b = rndInt(l2[0],l2[1]);
+  const c = rndInt(l3[0],l3[1]);
+  return {x:a,y:b,z:c};
+}
+const rand3float = (l1,l2,l3) => {
+  const a = rndFloat(l1[0],l1[1]);
+  const b = rndFloat(l2[0],l2[1]);
+  const c = rndFloat(l3[0],l3[1]);
+  return {x:a,y:b,z:c};
+}
+
+const createCloud = (p,s={x:1,y:2,z:1}) => {
+  const cloud = document.createElement("a-entity");
+  cloud.setAttribute("position",p);
+  cloud.setAttribute("scale",s);
+  const cp1 = document.createElement("a-sphere");
+  const cp2 = document.createElement("a-sphere");
+  const cp3 = document.createElement("a-sphere");
+  cp2.setAttribute("position",{x:2,y:0,z:0});
+  cp3.setAttribute("position",{x:1,y:0,z:0});
+  cp3.setAttribute("scale",{x:1.2,y:1.2,z:1.2})
+  cloud.append(cp1);
+  cloud.append(cp2);
+  cloud.append(cp3);
+  
+  scene.append(cloud);
+  console.log(cloud);
+}
 
 /* Task 3: Create a function createHouse that,
       1) Accept an x and z position for where to place the house "entity"
