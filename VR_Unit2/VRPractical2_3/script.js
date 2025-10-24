@@ -27,6 +27,7 @@ window.addEventListener("DOMContentLoaded",function() {
     let z = rndInt(-200,200);
     let tree = new Tree(x, 0 , z);
     const cloud = new Cloud(rand3([-500,500],[30,50],[-500,500]),rand3float([2,4],[.5,1],[2,4]));
+    const house = new House(rand3([-500,500],[-1,-1],[-500,500]))
   }
 
 })
