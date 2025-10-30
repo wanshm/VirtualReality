@@ -40,10 +40,10 @@ window.addEventListener("DOMContentLoaded",function() {
       6) Add the cloud entity to the scene
 */
 function createHouse(x,y,z){
-  let house = document.createElement("a-entity");
+  const house = document.createElement("a-entity");
 
-  let base = document.createElement("a-box");
-  let roof = document.createElement("a-cylinder");
+  const base = document.createElement("a-box");
+  const roof = document.createElement("a-cylinder");
 
   roof.setAttribute("color","black");
 
