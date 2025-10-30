@@ -52,7 +52,6 @@ class Rocket {
         const p = this.el.getAttribute("position");
 
         this.el.setAttribute("position",{x:this.el.x,y:p.y+v,z:this.el.z})
-        console.log(p)
     }
     generate(parent) {
         parent.append(this.el);

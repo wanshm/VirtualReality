@@ -17,7 +17,6 @@ window.addEventListener("DOMContentLoaded",function() {
 
     r.generate(scene);
     rockets.push(r);
-    console.log(r.el.getAttribute("position"))
   }
   function loop(){
 
