@@ -1,0 +1,92 @@
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.7.0/aframe.min.js"></script>
+    <script src="mazepiece.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <a-assets>
+        <!-- Challenge
+             Upload a picture to use as the texture for the walls of your maze if you want
+        -->
+      </a-assets>
+      <a-plane position="0 0 0" rotation="-90 0 0" width="150" height="150" color="#AAFFAA"></a-plane>
+      
+      <a-entity class="ne_corner">
+        <a-box scale="1.2 4 5" position="-1.9 2 0"></a-box>
+        <a-box scale="1.2 4 5" position="0 2 1.9" rotation="0 90 0"></a-box>
+        <a-box scale="1.2 4 1.2" position="1.9 2 -1.9" ></a-box>
+      </a-entity>
+      <a-entity class="nw_corner">
+        <a-box scale="1.2 4 5" position="0 2 1.9" rotation="0 90 0"></a-box>
+        <a-box scale="1.2 4 5" position="1.9 2 0" ></a-box>
+        <a-box scale="1.2 4 1.2" position="-1.9 2 -1.9" ></a-box>
+      </a-entity>
+      <a-entity class="se_corner">
+        <a-box scale="1.2 4 5" position="-1.9 2 0"></a-box>
+        <a-box scale="1.2 4 5" position="0 2 -1.9" rotation="0 90 0"></a-box>
+        <a-box scale="1.2 4 1.2" position="1.9 2 1.9" ></a-box>
+      </a-entity>
+      <a-entity class="sw_corner">
+        <a-box scale="1.2 4 5" position="1.9 2 0"></a-box>
+        <a-box scale="1.2 4 5" position="0 2 -1.9" rotation="0 90 0"></a-box>
+        <a-box scale="1.2 4 1.2" position="-1.9 2 1.9" ></a-box>
+      </a-entity>
+      <a-entity class="ew_coridor">
+        <a-box scale="5 4 1.2" position="0 2 -1.9"></a-box>
+        <a-box scale="5 4 1.2" position="0 2 1.9"></a-box>
+      </a-entity>
+      <a-entity class="ns_coridor">
+        <a-box scale="5 4 1.2" position="-1.9 2 0" rotation="0 90 0"></a-box>
+        <a-box scale="5 4 1.2" position="1.9 2 0" rotation="0 90 0"></a-box>
+      </a-entity>
+      <a-entity class="swe_3way">
+        <a-box scale="5 4 1.2" position="0 2 -1.9"></a-box>
+        <a-box scale="1.2 4 1.2" position="-1.9 2 1.9" ></a-box>
+        <a-box scale="1.2 4 1.2" position="1.9 2 1.9" ></a-box>
+      </a-entity>
+      <a-entity class="nwe_3way">
+        <a-box scale="5 4 1.2" position="0 2 1.9"></a-box>
+        <a-box scale="1.2 4 1.2" position="-1.9 2 -1.9" ></a-box>
+        <a-box scale="1.2 4 1.2" position="1.9 2 -1.9" ></a-box>
+      </a-entity>
+      <a-entity class="nsw_3way">
+        <a-box scale="5 4 1.2" position="-1.9 2 0" rotation="0 90 0"></a-box>
+        <a-box scale="1.2 4 1.2" position="1.9 2 1.9" ></a-box>
+        <a-box scale="1.2 4 1.2" position="1.9 2 -1.9" ></a-box>
+      </a-entity>
+      <a-entity class="nse_3way">
+        <a-box scale="5 4 1.2" position="1.9 2 0" rotation="0 90 0"></a-box>
+        <a-box scale="1.2 4 1.2" position="-1.9 2 1.9" ></a-box>
+        <a-box scale="1.2 4 1.2" position="-1.9 2 -1.9" ></a-box>
+      </a-entity>
+      <a-entity class="4way">
+        <a-box scale="1.2 4 1.2" position="1.9 2 1.9" ></a-box>
+        <a-box scale="1.2 4 1.2" position="1.9 2 -1.9" ></a-box>
+        <a-box scale="1.2 4 1.2" position="-1.9 2 -1.9" ></a-box>
+        <a-box scale="1.2 4 1.2" position="-1.9 2 1.9" ></a-box>
+      </a-entity>
+      <a-entity class="n_deadend">
+        <a-box scale="1.2 4 5" position="-1.9 2 0"></a-box>
+        <a-box scale="1.2 4 5" position="1.9 2 0"></a-box>
+        <a-box scale="1.2 4 5" position="0 2 1.9" rotation="0 90 0"></a-box>
+      </a-entity>
+      <a-entity class="s_deadend">
+        <a-box scale="1.2 4 5" position="-1.9 2 0"></a-box>
+        <a-box scale="1.2 4 5" position="1.9 2 0"></a-box>
+        <a-box scale="1.2 4 5" position="0 2 -1.9" rotation="0 90 0"></a-box>
+      </a-entity>
+      <a-entity class="e_deadend">
+        <a-box scale="1.2 4 5" position="-1.9 2 0"></a-box>
+        <a-box scale="1.2 4 5" position="0 2 1.9" rotation="0 90 0"></a-box>
+        <a-box scale="1.2 4 5" position="0 2 -1.9" rotation="0 90 0"></a-box>
+      </a-entity>
+      <a-entity class="e_deadend">
+        <a-box scale="1.2 4 5" position="1.9 2 0"></a-box>
+        <a-box scale="1.2 4 5" position="0 2 1.9" rotation="0 90 0"></a-box>
+        <a-box scale="1.2 4 5" position="0 2 -1.9" rotation="0 90 0"></a-box>
+      </a-entity>
+      <a-sky color="blue"></a-sky>
+      <a-camera position="0 12 27"> 
+      </a-camera>
+</html>
