@@ -1,9 +1,9 @@
 class MazePiece {
-    constructor(type,position){
-        const refpiece = document.getElementsByClassName(type);
-        this.el = refpiece.cloneNode(true); 
+    constructor(type,p){
+        this.el = type.cloneNode(true); 
+        this.el.setAttribute("position",p);
     }
     generate(parent){
-        parent.append(this.el)
+        parent.append(this.el);
     }
 }
