@@ -2,6 +2,7 @@
   <head>
     <script src="https://aframe.io/releases/1.7.0/aframe.min.js"></script>
     <script src="script.js"></script>
+    <script src="car.js"></script>
   </head>
     <body>
       <h1>Hi</h1>
@@ -9,10 +10,60 @@
         <a-plane color="brown" position="0 0 -5" rotation="-90 0 0" width="50" height="50"></a-plane>
         <a-sky color="blue"></a-sky>
 
-        <a-camera position="0 2 0">
-          <a-cursor raycaster="objects: [interact]"></a-cursor>
+        <a-camera position="0 4 0">
+          <a-cursor></a-cursor>
         </a-camera>
+        <a-entity id="mycar" position="-9999999" scale="2 2 2" >
+        car
+        <a-box position="1.5 2.5 -1.5" scale="3 1 5" color="tomato">
+          Body
+          <a-box position="0 .75 -.02" scale="1 .5 .6" color="tomato">
+            upper body
+            <a-box position="-.25 0 .455" scale="0.45 0.9 0.1" color="#7eeddb">windshield</a-box>
+            <a-box position="0.25 0 .455" scale="0.45 0.9 0.1" color="#7eeddb">windshield</a-box>
+          </a-box>
+          <a-torus position="-.35 0 0.5" scale="0.05 0.2 0.02" >
+            headlight left
+            <a-circle position="0 0 .1" color="yellow"></a-circle>
+          </a-torus>
+          <a-torus position=".35 0 0.5" scale="0.05 0.2 0.02" >
+            headlight right
+            <a-circle position="0 0 .1" color="yellow"></a-circle>
+          </a-torus>
+          <a-box position="0 0 0.5" scale="0.35 0.5 0.02">grille</a-box>
+          <a-box position="0 0 -0.5" scale="0.35 0.5 0.02">back plate</a-box>
+          <a-torus position="0.5 0.3 0.05" scale="0.01 0.015 0.03" rotation="90 0 0" color="gray">doorhandle</a-torus>
+          <a-torus position="0.5 0.3 -.225" scale="0.01 0.015 0.03" rotation="90 0 0" color="gray">doorhandle</a-torus>
+          <a-torus position="-0.5 0.3 0.05" scale="0.01 0.015 0.03" rotation="90 0 0" color="gray">doorhandle</a-torus>
+          <a-torus position="-0.5 0.3 -.225" scale="0.01 0.015 0.03" rotation="90 0 0" color="gray">doorhandle</a-torus>
+          <a-box position="0.35 0.1 -0.5" scale="0.16 0.35 0.02" color="red">tail light</a-box>
+          <a-box position="-0.35 0.1 -0.5" scale="0.16 0.35 0.02" color="red"> tail light</a-box>
+          <a-box position="-0.5 .75 0.14" scale="0.01 0.4 0.25" color="#7eeddb">Passenger window</a-box>
+          <a-box position="-0.5 .75 -0.14" scale="0.01 0.4 0.25" color="#7eeddb">Passenger window</a-box>
+          <a-box position="0.5 .75 0.14" scale="0.01 0.4 0.25" color="#7eeddb">Passenger window</a-box>
+          <a-box position="0.5 .75 -0.14" scale="0.01 0.4 0.25" color="#7eeddb">Passenger window</a-box>
+          <a-box position="0.5 .25 0" scale="0.001 1.5 0.003" color="#000000">doorline</a-box>
+          <a-box position="0.5 .25 0.27" scale="0.001 .5 0.003" color="#000000">doorline</a-box>
+          <a-ring position="0.501 -0.4 0.27" rotation="0 90 0" scale="0.1 .5 0.003" theta-start="-14" theta-length="104" color="#000000" radius-outer=".85"> doorline</a-ring>
+          <a-ring position=".501 -0.4 -0.27" rotation="0 90 0" scale="0.1 .5 0.003" theta-start="90" theta-length="104" color="#000000" radius-outer=".85"> doorline</a-ring>
+          <a-box position="0.5 .5 -0.27" scale="0.001 1 0.003" color="#000000">doorline</a-box>
+          <a-box position="-0.5 .25 0" scale="0.001 1.5 0.003" color="#000000">doorline</a-box>
+          <a-box position="-0.5 .25 0.27" scale="0.001 .5 0.003" color="#000000">doorline</a-box>
+          <a-ring position="-.501 -0.4 0.27" rotation="0 -90 0" scale="0.1 .5 0.003" theta-start="90" theta-length="104" color="#000000" radius-outer=".85"> doorline</a-ring>
+          <a-ring position="-.501 -0.4 -0.27" rotation="0 -90 0" scale="0.1 .5 0.003" theta-start="-14" theta-length="104" color="#000000" radius-outer=".85"> doorline</a-ring>
+          <a-box position="-0.5 .5 -0.27" scale="0.001 1 0.003" color="#000000">doorline</a-box>
+          
+        </a-box>
+        <a-box position="1.5 2.82 -3.32" rotation="-30 0 0" scale="3 1 1" color="tomato"> back of the car slanted part
+
+          <a-box position="0 .5 0" scale="0.01 0.8 0.75" rotation="0 0 90" color="#7eeddb">Passenger window</a-box>
+        </a-box>
         
+        <a-cylinder rotation="0 0 90" scale=".5 .5 .5" position="0 2 0 " color="#000000">Front Right Wheel</a-cylinder>
+        <a-cylinder rotation="0 0 90" scale=".5 .5 .5" position="3 2 0 " color="#000000">Front Left Wheel</a-cylinder>
+        <a-cylinder rotation="0 0 90" scale=".5 .5 .5" position="0 2 -3 " color="#000000">Back Right Wheel</a-cylinder>
+        <a-cylinder rotation="0 0 90" scale=".5 .5 .5" position="3 2 -3 " color="#000000">Back Front Wheel</a-cylinder>
+      </a-entity>
       </a-scene>
 
     </body>
