@@ -5,9 +5,12 @@ window.addEventListener("DOMContentLoaded",function() {
   scene = document.querySelector("a-scene");
   camera = document.querySelector("a-camera");
   /* Challenge 1
-     Add 10 new PotHole at random locations to the potholes array
+     Add 1000 new PotHole at random locations to the potholes array
   */
-  
+  for (let i = 0; i< 15000; i++){
+    const p = new Pothole(rnd(-500,500),rnd(-500,500));
+    potholes.push(p);
+  }
   setTimeout(loop,100);
 })
 function loop(){
@@ -15,9 +18,15 @@ function loop(){
      Go through the potholes array.  If the distance between you and a 
      pothole is less than 1.7, set the camera's drop variable to true. 
   */
+  potholes.forEach((hole)=>{
+    if(distance(hole.obj,camera)<1.7){
+      camera.drop = true;
+    }
+  }
+  )
 
-  if(camera.drop){
-    camera.object3D.position.y -= 0.025;
+  if(camera.drop&& camera.object3D.position.y> -70){
+    camera.object3D.position.y -= 5.025;
   }
  
   window.requestAnimationFrame(loop);
