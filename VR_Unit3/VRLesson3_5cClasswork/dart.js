@@ -5,10 +5,13 @@ class Dart{
     let pos = camera.object3D.position;
     this.obj.setAttribute("position",{x:pos.x,y:pos.y,z:pos.z});
     scene.append(this.obj);
+
+    this.obj.setAttribute("color","purple")
+    this.obj.setAttribute("scale",{x:3,y:3,z:3});
     
     let theta = camera.object3D.rotation.y + Math.PI;
     let phi = camera.object3D.rotation.x;
-    let v = 0.1
+    let v = 1
     let v_xz = v * Math.cos(phi);
     this.dz = v_xz * Math.cos(theta);
     this.dx = v_xz * Math.sin(theta);

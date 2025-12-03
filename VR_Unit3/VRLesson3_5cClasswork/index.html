@@ -4,13 +4,38 @@
     <script src="dart.js"></script>
     <script src="block.js"></script>
     <script src="script.js"></script>
+
+    <script>
+      AFRAME.registerComponent('modify-materials', {
+        init: function () {
+          // Wait for model to load.
+          this.el.addEventListener('model-loaded', () => {
+            // Grab the mesh / scene.
+            const obj = this.el.getObject3D('mesh');
+            // Go over the submeshes and modify materials we want.
+            obj.traverse(node => {
+              if (node.name.indexOf('ship') !== -1) {
+                node.material.color.set('red');
+              }
+            });
+          });
+        }
+      });
+  </script>
+
   </head>
   <body>
+    
     <a-scene>
-      <a-plane position="0 0 -4" rotation="-90 0 0" width="40" height="40" color="#7BC8A4"></a-plane>
+    <a-assets>
+      
+    </a-assets>
+      <a-plane position="0 0 -4" rotation="-90 0 0" width="400" height="400" color="#7BC8A4"></a-plane>
       <a-sky color="#ECECEC"></a-sky>
-
-      <a-camera position="0 1.6 0"></a-camera>
+      <a-entity gltf-model="" modify-materials></a-entity>
+      <a-camera position="0 1.6 0">
+        <a-cursor></a-cursor>
+      </a-camera>
     </a-scene>
   </body>
 </html>

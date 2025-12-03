@@ -8,9 +8,9 @@ window.addEventListener("DOMContentLoaded",function() {
   window.onclick = ()=>{
     dart = new Dart();
   } 
-  for(let i = 0; i < 20; i++){
-    let x = rnd(-10,10);
-    let z = rnd(-10,10);
+  for(let i = 0; i < 2000; i++){
+    let x = rnd(-100,100);
+    let z = rnd(-100,100);
     blocks.push(new Block(x,z));
   }
   setTimeout(loop,100);
@@ -23,9 +23,14 @@ function loop(){
      Note: Explore the Block class for an understanding of the 
      above two tasks.
   */
-
   if(dart){
     dart.fly();
+    blocks.forEach((block)=>{
+      if(distance(dart.obj, block.obj) < 6 ){
+        block.shot = true;
+        block.shrink()
+      }
+    })
   }
   window.requestAnimationFrame(loop);
 }
