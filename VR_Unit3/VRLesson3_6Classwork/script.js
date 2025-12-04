@@ -19,6 +19,31 @@ window.addEventListener("DOMContentLoaded",function() {
     Note: Copy and paste!
   */
 
+  function handlekeypress(event){
+    switch(event.key){
+      case "q":
+        gem.object3D.rotation.y +=0.1;
+        break;
+      case "e":
+        gem.object3D.rotation.y -=0.1;
+        break;
+      case "r":
+        gem.object3D.rotation.x +=0.1;
+        break;
+      case "t":
+        gem.object3D.rotation.x -=0.1;
+        break;
+      case "z":
+        gem.object3D.rotation.z +=0.1;
+        break;
+      case "x":
+        gem.object3D.rotation.z -=0.1;
+        break;
+    }
+  }
+  window.addEventListener("keydown",(e)=>{handlekeypress(e)} )
+  window.addEventListener("click",()=>{gem.setAttribute("rotation","0 0 0")} )
+
   /*  Challenge 2
      When the user clicks in the window, resets the gem rotation to (0,0,0)
   */ 
