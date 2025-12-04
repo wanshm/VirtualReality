@@ -17,7 +17,6 @@ window.addEventListener("DOMContentLoaded",function() {
   */
 
   window.addEventListener("keydown",(e)=>{
-    console.log(e.key)
     e.key == " " && resetCam();
   })
 
