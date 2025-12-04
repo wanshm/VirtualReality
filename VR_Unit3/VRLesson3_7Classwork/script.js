@@ -16,6 +16,11 @@ window.addEventListener("DOMContentLoaded",function() {
      cameras in the balls when the user presses the space bar.
   */
 
+  window.addEventListener("keydown",(e)=>{
+    console.log(e.key)
+    e.key == " " && resetCam();
+  })
+
   loop();
 })
 
@@ -31,3 +36,9 @@ function loop(){
    Create a function to turn off the cameras in all the balls. This 
    is needed for the rest of the challenges.
 */
+function resetCam(){
+  balls.forEach((ball)=>{
+    ball.camera.setAttribute("active",false)
+  })
+  mainCamera.setAttribute("active",true)
+}
