@@ -6,9 +6,14 @@
   </head>
   <body>
     <a-scene>
+      <a-assets>
+        <img src="cross.png" id="cross">
+      </a-assets>
       <a-plane position="0 0 -4" rotation="-90 0 0" width="40" height="40" color="#7BC8A4"></a-plane>
       <a-sky color="#ECECEC"></a-sky>
-      <a-camera position="0 1.6 0"></a-camera>
+      <a-camera position="0 1.6 0">
+        <a-cursor raycaster="showLine:true; lineColor:red" position="0 1 0"></a-cursor>
+      </a-camera>
     </a-scene>
   </body>
 </html>

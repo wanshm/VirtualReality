@@ -23,6 +23,7 @@ class Ball{
        enable you to interact with other objects from this camera
     */
     const cursor = document.createElement("a-cursor")
+    cursor.setAttribute("raycaster","showLine:true")
     this.camera.append(cursor);
     /* Challenge 4
        When the user clicks on this sphere, turn off the cameras of 
