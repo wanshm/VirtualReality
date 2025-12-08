@@ -1,5 +1,5 @@
 let rnd = (l,u) => Math.random() * (u-l) + l
-let scene, camera, bullet, enemies = [], ammo_boxes = [], ammo_count = 3, enemy_killed = 0;
+let scene, camera, bullets = [], enemies = [], ammo_boxes = [], ammo_count = 10, enemy_killed = 0;
 
 window.addEventListener("DOMContentLoaded",function() {
   scene = document.querySelector("a-scene");
@@ -7,9 +7,16 @@ window.addEventListener("DOMContentLoaded",function() {
 
   window.addEventListener("keydown",function(e){
     //User can only fire with they press the spacebar and have sufficient ammo
-    if(e.key == " " && ammo_count > 0  ){
-      bullet = new Bullet();
+    if(e.key == " "){
+      const b = new Bullet();
+      bullets.unshift(b);
       ammo_count--;
+    }
+  })
+  window.addEventListener("keydown",function(e){
+    //User can only fire with they press the spacebar and have sufficient ammo
+    if(e.key == "r"){
+      ammo_count=10;
     }
   })
   
@@ -17,10 +24,16 @@ window.addEventListener("DOMContentLoaded",function() {
   setTimeout(countdown,100);
 })
 
-function loop(){
-  if(bullet){
-    bullet.fire();
-  }
+function loop(timestamp){
+  console.log(timestamp)
+
+  bullets.forEach((b,i)=>{
+    b.fire();
+    if(distance(b.obj,camera)>200 && b){
+      bullets.splice(i,1)
+      b.obj.parentNode.removeChild(b.obj);
+    }
+  })
  
   window.requestAnimationFrame(loop);
 }
