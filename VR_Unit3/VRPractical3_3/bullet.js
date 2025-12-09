@@ -1,9 +1,9 @@
 class Bullet{
   constructor(){
     this.obj = document.createElement("a-sphere");
-    this.obj.setAttribute("radius",5)
+    this.obj.setAttribute("radius",2)
     let pos = camera.object3D.position;
-    this.obj.setAttribute("position",{x:pos.x,y:pos.y+20,z:pos.z});
+    this.obj.setAttribute("position",{x:pos.x,y:pos.y+10,z:pos.z});
     scene.append(this.obj);
     
     let theta = camera.object3D.rotation.y + Math.PI;

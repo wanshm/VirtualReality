@@ -3,17 +3,54 @@
     <script src="https://aframe.io/releases/1.7.0/aframe.min.js"></script>
     <script src="bullet.js"></script>
     <script src="script.js"></script>
+    <script src="enemy.js"></script>
   </head>
   <body>
     <a-scene>
       <a-assets>
         <img src="cross.png" id="cross">
+        <img id="spidereye" src="spidereye2.jpg" />
+        <img id="spiderskin" src="spiderskin3.jpg" />
+        <img id="spidereye" src="spidereye2.jpg" />
       </a-assets>
-      <a-plane position="0 0 -4" rotation="-90 0 0" width="1000" height="1000" color="#7BC8A4"></a-plane>
+      <a-plane position="0 0 0" rotation="-90 0 0" width="1000" height="1000" color="#7BC8A4"></a-plane>
       <a-sky color="#ECECEC"></a-sky>
       <a-camera position="0 1.6 0">
-        <a-cursor raycaster="showLine:true; lineColor:red" position="0 20 0"></a-cursor>
+        <a-cursor raycaster="showLine:true; lineColor:red" position="0 10 0"></a-cursor>
       </a-camera>
+
+      <a-entity id="stash" position="0 -9999999 0">
+        <a-entity id="spider" rotation="0 0 0" position="0 0.5 -2" scale="0.4 0.4 0.4">
+        <a-sphere src="#spidereye" position="0.5 0.25 0.85" radius="0.175"></a-sphere>
+        <a-sphere src="#spidereye" position="0.2 0.25 0.85" radius="0.25"></a-sphere>
+        <a-sphere src="#spidereye" position="-0.2 0.25 0.85" radius="0.25"></a-sphere>
+        <a-sphere src="#spidereye" position="-0.5 0.25 0.85" radius="0.175"></a-sphere>
+        <a-entity position="0 0 0">
+          <a-sphere src="#spiderskin" position="0 0 0"></a-sphere>
+          <a-cylinder src="#spiderskin" position="-1 0.5 0.25" radius="0.25" height="2" rotation="0 0 45"></a-cylinder>
+          <a-cylinder src="#spiderskin" position="-2.3 0.3 0.25" radius="0.25" height="2.5" rotation="0 0 -45"></a-cylinder>
+
+          <a-cylinder src="#spiderskin" position="1 0.5 0.25" radius="0.25" height="2" rotation="0 0 -45"></a-cylinder>
+          <a-cylinder src="#spiderskin" position="2.3 0.3 0.25" radius="0.25" height="2.5" rotation="0 0 45"></a-cylinder>
+        </a-entity>
+        <a-entity position="0 0 -1.05">
+          <a-sphere src="#spiderskin" position="0 0 0"></a-sphere>
+          <a-cylinder src="#spiderskin" position="-1 0.5 0.25" radius="0.25" height="2" rotation="0 0 45"></a-cylinder>
+          <a-cylinder src="#spiderskin" position="-2.3 0.3 0.25" radius="0.25" height="2.5" rotation="0 0 -45"></a-cylinder>
+
+          <a-cylinder src="#spiderskin" position="1 0.5 0.25" radius="0.25" height="2" rotation="0 0 -45"></a-cylinder>
+          <a-cylinder src="#spiderskin" position="2.3 0.3 0.25" radius="0.25" height="2.5" rotation="0 0 45"></a-cylinder>
+        </a-entity>
+        <a-entity position="0 0 -2.1">
+          <a-sphere src="#spiderskin" position="0 0 0"></a-sphere>
+          <a-cylinder src="#spiderskin" position="-1 0.5 0.25" radius="0.25" height="2" rotation="0 0 45"></a-cylinder>
+          <a-cylinder src="#spiderskin" position="-2.3 0.3 0.25" radius="0.25" height="2.5" rotation="0 0 -45"></a-cylinder>
+
+          <a-cylinder src="#spiderskin" position="1 0.5 0.25" radius="0.25" height="2" rotation="0 0 -45"></a-cylinder>
+          <a-cylinder src="#spiderskin" position="2.3 0.3 0.25" radius="0.25" height="2.5" rotation="0 0 45"></a-cylinder>
+        </a-entity>
+      </a-entity>
+      </a-entity>
     </a-scene>
   </body>
 </html>

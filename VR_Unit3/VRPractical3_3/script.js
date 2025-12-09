@@ -5,7 +5,14 @@ window.addEventListener("DOMContentLoaded",function() {
   scene = document.querySelector("a-scene");
   camera = document.querySelector("a-camera");
 
+  for(let i = 0;i < 100;i++ ){
+    const e = new Enemy("spider",{x:rnd(-50,50),y:0.5,z:rnd(-50,50)})
+    enemies.push(e)
+    e.generate(scene);
+  }
+
   window.addEventListener("keydown",function(e){
+    
     //User can only fire with they press the spacebar and have sufficient ammo
     if(e.key == " "){
       const b = new Bullet();
@@ -20,12 +27,13 @@ window.addEventListener("DOMContentLoaded",function() {
     }
   })
   
+
+
   setTimeout(loop,100);
   setTimeout(countdown,100);
 })
 
 function loop(timestamp){
-  console.log(timestamp)
 
   bullets.forEach((b,i)=>{
     b.fire();
@@ -33,6 +41,11 @@ function loop(timestamp){
       bullets.splice(i,1)
       b.obj.parentNode.removeChild(b.obj);
     }
+    // enemies.forEach((enemy)=>{
+    //   if(distance(enemy.el,b.obj)>5){
+    //     enemy.kill()
+    //   }
+    // })
   })
  
   window.requestAnimationFrame(loop);
