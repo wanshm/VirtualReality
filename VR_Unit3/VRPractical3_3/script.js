@@ -1,9 +1,11 @@
 let rnd = (l,u) => Math.random() * (u-l) + l
-let scene, camera, bullets = [], enemies = [], ammo_boxes = [], ammo_count = 10, enemy_killed = 0;
+let scene, camera, bullets = [], enemies = [], ammo_boxes = [], ammo_count = 10, enemy_killed = 0, laser, laserAngle={x:0,y:0,z:0};
 
 window.addEventListener("DOMContentLoaded",function() {
   scene = document.querySelector("a-scene");
   camera = document.querySelector("a-camera");
+  laser = document.querySelector("a-cursor")
+
 
   for(let i = 0;i < 100;i++ ){
     const e = new Enemy("spider",{x:rnd(-50,50),y:0.5,z:rnd(-50,50)})
@@ -11,10 +13,28 @@ window.addEventListener("DOMContentLoaded",function() {
     e.generate(scene);
   }
 
+
+
+  window.addEventListener("wheel",(e)=>{
+    
+    if(e.deltaY > 0 ){
+      rot = laser.getAttribute("rotation")
+      laser.setAttribute("rotation", {x: rot.x+1, y: rot.y, z: rot.z})
+      laserAngle=laser.getAttribute("rotation");
+    }
+    if(e.deltaY < 0 && laserAngle.x > -20){
+      rot = laser.getAttribute("rotation")
+      laser.setAttribute("rotation", {x: rot.x-1, y: rot.y, z: rot.z})
+      laserAngle=laser.getAttribute("rotation");
+    }
+    console.log(laserAngle.x)
+  })
+
   window.addEventListener("keydown",function(e){
     
     //User can only fire with they press the spacebar and have sufficient ammo
     if(e.key == " "){
+      console.log(camera.object3D)
       const b = new Bullet();
       bullets.unshift(b);
       ammo_count--;
