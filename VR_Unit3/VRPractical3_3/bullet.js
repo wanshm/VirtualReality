@@ -7,7 +7,7 @@ class Bullet{
     scene.append(this.obj);
     
     this.theta = camera.object3D.rotation.y + Math.PI;
-    this.phi = camera.object3D.rotation.x ; // do something 
+    this.phi = THREE.MathUtils.degToRad(laserAngle.x) ; // do something 
     let v = 2.1;
     let v_xz = v * Math.cos(this.phi);
     this.dz = v_xz * Math.cos(this.theta);

@@ -4,6 +4,7 @@ let scene, camera, bullets = [], enemies = [], ammo_boxes = [], ammo_count = 10,
 window.addEventListener("DOMContentLoaded",function() {
   scene = document.querySelector("a-scene");
   camera = document.querySelector("a-camera");
+
   laser = document.querySelector("a-cursor")
 
 
@@ -13,18 +14,28 @@ window.addEventListener("DOMContentLoaded",function() {
     e.generate(scene);
   }
 
+    laserAngle.x = camera.object3D.rotation.x
+
 
 
   window.addEventListener("wheel",(e)=>{
-    
-    if(e.deltaY > 0 ){
+    console.log(e)
+    if(e.deltaY > 0 && laserAngle.x < -2){
       rot = laser.getAttribute("rotation")
-      laser.setAttribute("rotation", {x: rot.x+1, y: rot.y, z: rot.z})
+      if(e.shiftKey){
+        laser.setAttribute("rotation", {x: rot.x+1, y: rot.y, z: rot.z})
+      } else{
+        laser.setAttribute("rotation", {x: rot.x+5, y: rot.y, z: rot.z})
+      }
       laserAngle=laser.getAttribute("rotation");
     }
-    if(e.deltaY < 0 && laserAngle.x > -20){
-      rot = laser.getAttribute("rotation")
-      laser.setAttribute("rotation", {x: rot.x-1, y: rot.y, z: rot.z})
+    if(e.deltaY < 0 && laserAngle.x > -70){
+      rot = laser.getAttribute("rotation");
+      if(e.shiftKey){
+        laser.setAttribute("rotation", {x: rot.x-1, y: rot.y, z: rot.z})
+      } else{
+        laser.setAttribute("rotation", {x: rot.x-5, y: rot.y, z: rot.z})
+      }
       laserAngle=laser.getAttribute("rotation");
     }
     console.log(laserAngle.x)
@@ -34,7 +45,7 @@ window.addEventListener("DOMContentLoaded",function() {
     
     //User can only fire with they press the spacebar and have sufficient ammo
     if(e.key == " "){
-      console.log(camera.object3D)
+  console.log(camera.object3D)
       const b = new Bullet();
       bullets.unshift(b);
       ammo_count--;
@@ -54,6 +65,11 @@ window.addEventListener("DOMContentLoaded",function() {
 })
 
 function loop(timestamp){
+  const cameraAngle = camera.getAttribute("rotation")
+  const camerap = camera.getAttribute("position")
+
+  laser.setAttribute("rotation",{x:laserAngle.x,y:cameraAngle.y,z:cameraAngle.z})
+  laser.setAttribute("position",{x:camerap.x,y:camerap.y+10,z:camerap.z})
 
   bullets.forEach((b,i)=>{
     b.fire();
@@ -61,11 +77,13 @@ function loop(timestamp){
       bullets.splice(i,1)
       b.obj.parentNode.removeChild(b.obj);
     }
-    // enemies.forEach((enemy)=>{
-    //   if(distance(enemy.el,b.obj)>5){
-    //     enemy.kill()
-    //   }
-    // })
+    enemies.forEach((enemy,i)=>{
+      if(distance(enemy.el,b.obj)<3){
+        
+        enemy.kill()
+        enemies.splice(i,1)
+      }
+    })
   })
  
   window.requestAnimationFrame(loop);
