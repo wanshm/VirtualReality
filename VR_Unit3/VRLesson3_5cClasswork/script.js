@@ -8,9 +8,9 @@ window.addEventListener("DOMContentLoaded",function() {
   window.onclick = ()=>{
     dart = new Dart();
   } 
-  for(let i = 0; i < 2000; i++){
-    let x = rnd(-100,100);
-    let z = rnd(-100,100);
+  for(let i = 0; i < 20; i++){
+    let x = rnd(-10,10);
+    let z = rnd(-10,10);
     blocks.push(new Block(x,z));
   }
   setTimeout(loop,100);
@@ -25,10 +25,13 @@ function loop(){
   */
   if(dart){
     dart.fly();
-    blocks.forEach((block)=>{
+    blocks.forEach((block,i)=>{
       if(distance(dart.obj, block.obj) < 6 ){
         block.shot = true;
         block.shrink()
+      } if(block.obj.object3D.scale.x < 0.5){
+        block.obj.parentNode.removeChild(block.obj);
+        blocks.splice(i,1)
       }
     })
   }
