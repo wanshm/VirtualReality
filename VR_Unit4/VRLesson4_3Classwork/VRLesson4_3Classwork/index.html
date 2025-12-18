@@ -11,12 +11,29 @@
 <a-scene physics="debug: false">
 
   <!-- Floor -->
-  <a-plane static-body color="green" rotation="-90 0 0" side="double" width="50" height="50" opacity="0.5"></a-plane>
+  <a-plane static-body color="green" rotation="-90 0 0" side="double" width="5000" height="5000" opacity="0.5"></a-plane>
+  <a-plane static-body color="black" position="0 -1 0" rotation="-90 0 0" side="double" width="5000" height="5000" opacity="0.5"></a-plane>
+  <a-plane static-body color="red" position="0 -2 0" rotation="-90 0 0" side="double" width="5000" height="5000" opacity="0.5"></a-plane>
+
 
   <!-- Challenge 3: Add some static-body components for you and the balls to bump into -->
 
+  <a-box static-body position="0 0 0"></a-box>
+
+  <a-box static-body position="1 1 1"></a-box>
+
+  <a-box static-body position="2 0 2"></a-box>
+
+  <a-box static-body position="-1 0 -1"></a-box>
+
+  <a-box static-body position="20 0 20"></a-box>
+
+  <a-box static-body position="-10 0 10"></a-box>
+
+  <a-box static-body position="0.5 0 1"></a-box>
+
   <a-entity id="cameraRig" movement-controls="fly: true; speed: 0.7" position="0 1.6 0">
-    <a-camera id="camera" kinema-body="radius: 0.8">
+    <a-camera id="camera" kinema-body="radius: 1">
       <a-cursor></a-cursor>
     </a-camera>
   </a-entity>
