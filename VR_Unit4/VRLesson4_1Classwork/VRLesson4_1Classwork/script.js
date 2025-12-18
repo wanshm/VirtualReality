@@ -14,7 +14,7 @@ window.addEventListener("DOMContentLoaded",function() {
     ufos.push(ufo)
   }
 
-  for(let i = 0; i < 10; i++){
+  for(let i = 0; i < 100; i++){
     let x = rnd(-20,20);
     let z = rnd(-20,20);
     let robot = new Robot(x,0.5,z);
