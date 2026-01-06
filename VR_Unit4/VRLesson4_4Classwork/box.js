@@ -6,15 +6,19 @@ class Box{
       enable it to play forever
    */
   this.boom = false;
-  this.obj.setAttribute("sound","src:#fb")
+  this.obj.setAttribute("sound","src:#fb; autoplay:true; loop: true")
+  this.obj.setAttribute("raycastable","")
    /* Challenge
       Add an event listener that sets boom to true and
       plays the fireball sound effect
    */
 
   this.obj.addEventListener("click",()=>{
+    if(this.boom == false){
+      document.querySelector("#dragon").components.sound.playSound()
+      console.log("3")
+    }
     this.boom  = true;
-    console.log(this.boom)
   })
 
    this.obj.setAttribute("position",{x:x,y:y,z:z});

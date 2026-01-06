@@ -12,7 +12,9 @@ window.onload = function(){
  for(let i = 0; i<10; i++){
     const b = new Box(randInt(0,4), 1, randInt(0,4))
     boxes.push(b)
+    console.log(b)
  }
+ loop()
 }
 
 
@@ -22,8 +24,10 @@ function loop(){
   */
   boxes.forEach((box)=>{
     box.blast()
-    console.log(box.boom)
   })
+
+
+
   window.requestAnimationFrame( loop )
   
 }
